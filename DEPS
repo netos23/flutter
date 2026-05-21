@@ -84,6 +84,11 @@ vars = {
 
   'ocmock_rev': 'c4ec0e3a7a9f56cfdbd0aa01f4f97bb4b75c5ef8', # v3.7.1
 
+  # dashpod_connector — updater library for feather integration.
+  # Full repo is checked out; engine GN consumes the updater crate from within.
+  'dashpod_connector_git': 'https://github.com/netos23/dashpod_connector.git',
+  'dashpod_connector_rev': 'bce54f72f5fd72585570e154f30bb8b397667b6e',
+
   # Download a prebuilt Dart SDK by default
   'download_dart_sdk': True,
 
@@ -231,6 +236,9 @@ allowed_hosts = [
 deps = {
   'engine/src/flutter/third_party/depot_tools':
   Var('chromium_git') + '/chromium/tools/depot_tools.git' + '@' + '580b4ff3f5cd0dcaa2eacda28cefe0f45320e8f7',
+
+  'engine/src/flutter/third_party/dashpod_connector':
+   Var('dashpod_connector_git') + '@' + Var('dashpod_connector_rev'),
 
   'engine/src/flutter/third_party/rapidjson':
    Var('flutter_git') + '/third_party/rapidjson' + '@' + 'ef3564c5c8824989393b87df25355baf35ff544b',
